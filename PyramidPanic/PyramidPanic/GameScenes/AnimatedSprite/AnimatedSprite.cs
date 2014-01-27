@@ -29,7 +29,7 @@ namespace PyramidPanic
             this.iAnimatedSprite = iAnimatedSprite;
             this.sourceRectangle = new Rectangle(this.imageNumber * 32, 0, 32, 32);            
             this.effect = SpriteEffects.None;
-            this.pivot = new Vector2(16f, 16);
+            this.pivot = new Vector2(16f, 16f);
         }
 
         //Update

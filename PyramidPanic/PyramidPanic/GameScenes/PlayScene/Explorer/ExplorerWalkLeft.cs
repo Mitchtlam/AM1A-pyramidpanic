@@ -43,7 +43,7 @@ namespace PyramidPanic
         {
             // Deze code zorgt ervoor dat de explorer niet buiten de rechterrand
             // kan lopen.
-            if (this.explorer.Position.X < 0 )
+            if (this.explorer.Position.X < 20 )
             {
                 //Breng de explorer in de toestand Idle
                 this.explorer.State = this.explorer.Idle;
@@ -61,8 +61,8 @@ namespace PyramidPanic
             if (Input.EdgeDetectKeyUp(Keys.Left))
             {
                 this.explorer.State = this.explorer.Idle;
-                this.explorer.Idle.Initialize();
                 this.explorer.Idle.Effect = SpriteEffects.FlipHorizontally;
+                this.explorer.Idle.Rotation = 0f;
             }
             base.Update(gameTime);
         }

@@ -27,12 +27,16 @@ namespace PyramidPanic
         private ExplorerWalkDown walkDown;
         private ExplorerWalkLeft walkLeft;
         private ExplorerWalkRight walkRight;
+        private ExplorerIdleWalk walkIdle;
 
 
         //propperties
         public IEntityState State
         {
-            set { this.state = value; }
+            set {
+                    this.state = value;
+                    this.state.Initialize();           
+                }
         }
         public ExplorerIdle Idle
         {
@@ -53,7 +57,10 @@ namespace PyramidPanic
         public Vector2 Position
         {
             get { return this.position; }
-            set { this.position = value; }
+            set { 
+                    this.position = value;
+                    this.state.Initialize();
+                }
         }
         public ExplorerWalkDown WalkDown
         {
@@ -71,6 +78,10 @@ namespace PyramidPanic
         {
             get { return this.walkLeft; }
         }
+        public ExplorerIdleWalk WalkIdle
+        {
+            get { return this.walkIdle; }
+        }
 
 
 
@@ -85,6 +96,7 @@ namespace PyramidPanic
             this.walkRight = new ExplorerWalkRight(this);
             this.walkLeft = new ExplorerWalkLeft(this);
             this.idle = new ExplorerIdle(this);
+            this.walkIdle = new ExplorerIdleWalk(this);
             this.state = this.idle;
 
         }

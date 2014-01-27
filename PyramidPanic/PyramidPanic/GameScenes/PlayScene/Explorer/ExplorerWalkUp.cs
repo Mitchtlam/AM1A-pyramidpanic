@@ -55,10 +55,9 @@ namespace PyramidPanic
                 this.explorer.WalkDown.Initialize();
                 this.explorer.WalkLeft.Initialize();
                 this.explorer.WalkRight.Initialize();
+                this.explorer.Idle.Rotation = 0f;
             }
             this.explorer.Position -= this.velocity;
-            this.destinationRectangle.X = (int)this.explorer.Position.X;
-            this.destinationRectangle.Y = (int)this.explorer.Position.Y;
             base.Update(gameTime);
         }
 
