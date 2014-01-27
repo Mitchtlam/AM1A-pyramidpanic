@@ -30,6 +30,7 @@ namespace PyramidPanic
                                                 32,
                                                 32);
             this.velocity = new Vector2(0f, this.explorer.Speed);
+            this.rotation = 199.5f;
 
         }
 
@@ -46,7 +47,7 @@ namespace PyramidPanic
                 //this.explorer.State = this.explorer.ExplorerWalkLeft;
                 //this.explorer.WalkRight.Initialize();
             }
-
+ 
             //Als de Rifht knop wordt losgelatenm dan moet de explorer weer in de toestand idle komen
             if (Input.EdgeDetectKeyUp(Keys.Up))
             {
@@ -55,7 +56,7 @@ namespace PyramidPanic
                 this.explorer.WalkDown.Initialize();
                 this.explorer.WalkLeft.Initialize();
                 this.explorer.WalkRight.Initialize();
-                this.explorer.Idle.Rotation = 0f;
+                this.explorer.Idle.Rotation = 199.5f;
             }
             this.explorer.Position -= this.velocity;
             base.Update(gameTime);

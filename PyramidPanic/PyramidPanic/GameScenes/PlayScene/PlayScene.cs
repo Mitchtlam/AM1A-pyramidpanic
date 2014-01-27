@@ -42,7 +42,7 @@ namespace PyramidPanic
             this.beetle1 = new Beetle(this.game, new Vector2(400f, 100f));
             this.scorpion = new Scorpion(this.game, new Vector2(300f, 188f));
             this.scorpion1 = new Scorpion(this.game, new Vector2(188f, 300f));
-            this.explorer = new Explorer(this.game, new Vector2(0f, 240f));
+            this.explorer = new Explorer(this.game, new Vector2(304f, 240f));
         }
 
         // Update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
@@ -64,7 +64,7 @@ namespace PyramidPanic
         // tekent de textures op het canvas
         public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.Pink);
+            this.game.GraphicsDevice.Clear(Color.Teal);
             this.beetle.Draw(gameTime);
             this.beetle1.Draw(gameTime);
             this.scorpion.Draw(gameTime);

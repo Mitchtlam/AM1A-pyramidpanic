@@ -42,13 +42,16 @@ namespace PyramidPanic
         {
             // Deze code zorgt ervoor dat de explorer niet buiten de rechterrand
             // kan lopen.
+
+            this.explorer.Position += this.velocity;
+
             if (this.explorer.Position.X > 640 - 20)
             {
-                //Breng de explorer in de toestand Idle
-                this.explorer.State = this.explorer.Idle;
-                this.explorer.Idle.Initialize();
+                //Breng de explorer in de toestand WalkIdle
+                this.explorer.State = this.explorer.WalkIdle;
                 this.explorer.Idle.Effect = SpriteEffects.None;
                 this.explorer.Position -= this.velocity;
+                this.explorer.WalkIdle.Rotation = 0f;
             }
             
 
@@ -60,7 +63,7 @@ namespace PyramidPanic
                 this.explorer.Idle.Effect = SpriteEffects.None;
                 this.explorer.Idle.Rotation = 0f;
             }
-            this.explorer.Position += this.velocity;
+ 
             base.Update(gameTime);
         }
 

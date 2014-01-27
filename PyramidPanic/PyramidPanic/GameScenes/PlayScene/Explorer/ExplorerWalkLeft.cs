@@ -43,6 +43,9 @@ namespace PyramidPanic
         {
             // Deze code zorgt ervoor dat de explorer niet buiten de rechterrand
             // kan lopen.
+
+            this.explorer.Position += this.velocity;
+
             if (this.explorer.Position.X < 20 )
             {
                 //Breng de explorer in de toestand Idle
@@ -52,7 +55,6 @@ namespace PyramidPanic
                 this.explorer.Position += this.velocity;
             }
 
-            this.explorer.Position -= this.velocity;
             this.destinationRectangle.X = (int)this.explorer.Position.X;
             this.destinationRectangle.Y = (int)this.explorer.Position.Y;
 
